@@ -1,7 +1,6 @@
 const express = require("express");
 const path = require("path");
 const fs = require("fs");
-
 const {
   readFromFile,
   writeToFile,
@@ -31,7 +30,7 @@ app.post("/api/notes", (req, res) => {
     const newNote = {
       title,
       text,
-      id: 1,
+      id: uuidv4(),
     };
 
     readAndAppend(newNote, "./db/db.json");
